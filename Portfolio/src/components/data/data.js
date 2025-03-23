@@ -6,7 +6,7 @@ export const certificates = [
     link: "https://coursera.org/share/ad433986b07868f326d9b026ed514f1a",
   },
   {
-    name: "Introduction to Cyber Security",
+    name: "Introduction to CyberSecurity",
     image: "./src/assets/Certs/cyber.png",
     link: "https://www.simplilearn.com/learn-cyber-security-basics-skillup?utm_source=shared-certificate&utm_medium=shared-course&utm_campaign=shared-certificate-course-promotion",
   },

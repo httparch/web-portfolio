@@ -10,9 +10,7 @@ function InfoCard() {
           isShrunk ? "h-40 overflow-hidden" : "h-auto"
         }`}
       >
-        <h3 className="text-lg font-semibold text-center mb-4">
-          To You, From Me Today
-        </h3>
+        <h3 className="text-lg font-semibold text-center mb-4">To You</h3>
 
         <p className="text-gray-700 leading-relaxed">
           If you’re reading this, then time has moved forward, and life has

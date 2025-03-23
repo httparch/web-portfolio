@@ -6,8 +6,26 @@ import {
   FaCode,
   FaEye,
 } from "react-icons/fa";
+import { useState, useEffect } from "react";
 
 function ProfileCard() {
+  const [age, setAge] = useState(null);
+
+  useEffect(() => {
+    const birthDate = new Date("2002-03-25");
+    const today = new Date();
+    let calculatedAge = today.getFullYear() - birthDate.getFullYear();
+
+    if (
+      today.getMonth() < birthDate.getMonth() ||
+      (today.getMonth() === birthDate.getMonth() &&
+        today.getDate() < birthDate.getDate())
+    ) {
+      calculatedAge--;
+    }
+    setAge(calculatedAge);
+  }, []);
+
   return (
     <>
       <div className="bg-gray-300 rounded-lg p-6 flex-[2] min-w-[300px] shadow-inner shadow-gray-500">
@@ -23,7 +41,9 @@ function ProfileCard() {
               Archer Shane Bigornia
             </h2>
             <p className="text-gray-600 trucante">Software Developer</p>
-            <p className="text-gray-600 truncate">22 years old</p>
+            <p className="text-gray-600 truncate">
+              {age !== null ? `${age} years old` : "..."}
+            </p>
             <p className="text-gray-600 truncate">+639162772331</p>
             <p className="text-gray-600 truncate">
               bigorniaarcher679@gmail.com
@@ -33,7 +53,7 @@ function ProfileCard() {
 
         <div className="mt-5 flex items-center space-x-4">
           <a
-            href="../src/assets/Profile/CV_Bigornia_Archer_Shane_D.pdf"
+            href="../src/assets/Profile/CV_Bigornia_Archer_Shane.pdf"
             download
             className="bg-gray-700 text-white py-1 px-4 rounded-lg shadow-md hover:bg-gray-800 transition"
           >
