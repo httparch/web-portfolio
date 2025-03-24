@@ -1,5 +1,7 @@
 import { useState } from "react";
 import InfoCard from "./InfoCard";
+import { _key } from "./data/data.js";
+
 function OtherInfo() {
   const [formData, setFormData] = useState({
     name: "",
@@ -7,23 +9,48 @@ function OtherInfo() {
     message: "",
   });
 
+  const [result, setResult] = useState("");
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(
-      `Message Sent!\nName: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`
-    );
-    setFormData({ name: "", email: "", message: "" });
+
+    setResult("Sending...");
+
+    const dataForm = new FormData(e.target);
+
+    dataForm.append("access_key", _key);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: dataForm,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully!");
+      setFormData({ name: "", email: "", message: "" });
+      alert(
+        `Message Sent!\nName: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`
+      );
+      e.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
   };
 
   return (
     <>
       <InfoCard />
       <div className="bg-white rounded-lg p-3">
-        <h3 className="text-sm font-bold text-center">Message me!</h3>
+        <h3 className="text-sm font-bold text-center">
+          {result === "" ? "Message me!" : "Sending..."}
+        </h3>
         <form onSubmit={handleSubmit} className="mt-4">
           <input
             type="text"
