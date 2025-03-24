@@ -106,7 +106,7 @@ export const tools = [
 ];
 
 
-export   const artworkData = [
+export const artworkData = [
 { src: "../src/assets/Drawings/Painting.jpg", category: "painting" },
 { src: "../src/assets/Drawings/Painting2.jpg", category: "painting" },
 { src: "../src/assets/Drawings/Painting3.jpg", category: "painting" },
@@ -120,3 +120,5 @@ export   const artworkData = [
 { src: "../src/assets/Drawings/Portrait4.jpg", category: "portrait" },
 { src: "../src/assets/Drawings/Portrait5.jpg", category: "portrait" },
 ];
+
+export const _key = "93d51262-ad0e-48c1-a601-57370eb56bbc";
