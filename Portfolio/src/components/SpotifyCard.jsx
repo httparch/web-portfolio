@@ -1,4 +1,22 @@
+import { _GetRecentTrack, _SpotifyGetAccessToken } from "./data/api-controller";
+import { useEffect } from "react";
+
 function SpotifyCard() {
+  useEffect(() => {
+    const fetchRecentTrack = async () => {
+      try {
+        const token = await _SpotifyGetAccessToken();
+        console.log("Access token: " + token);
+
+        const data = await _GetRecentTrack(token);
+        console.log("DATA : " + data);
+      } catch (error) {
+        console.error("Error fetching Spotify data:", error);
+      }
+    };
+    fetchRecentTrack();
+  }, []);
+
   return (
     <>
       {" "}
