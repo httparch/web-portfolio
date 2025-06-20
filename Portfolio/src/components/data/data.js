@@ -66,14 +66,15 @@ export const projects = [
     link: "https://httparch.github.io/GhostErrorPage/threeJs-practice/index.html",
     Github: "https://github.com/httparch/CherryGame",
   },
+
   {
     id: 6,
-    title: "Calendar",
-    role: "Frontend developer",
-    description: "The Calendar Project is a dynamic calendar application I created as an academic requirement for my Web Development subject.The calendar updates dynamically, displaying the current date and time. It also includes a feature that detects whether it's day or night and adjusts accordingly. A built-in dark mode enhances usability, making it easier on the eyes. Additionally, the project features a \"Quote of the Day\" section, providing daily inspiration to users. ",
-    image: "./src/assets/Project/calendar.png",
-    link: "https://httparch.github.io/2024-calendar/calendar.html",
-    Github: "https://github.com/httparch/2024-calendar",
+    title: "SandaTap",
+    role: "Game developer",
+    description: "SandaTap is a fun and easy idle tapping game that lets you explore Philippine history with just your fingertips! Tap through important moments in Filipino culture — from ancient times to famous revolutions. Defeat enemies, collect gold, unlock heroes, and upgrade your gear as you relive the country’s greatest stories.",
+    image: "./src/assets/Project/SandaTap.png",
+    link: "https://www.sandatap.com/",
+    Github: "",
   },
   {
     id: 7,
@@ -93,15 +94,15 @@ export const projects = [
     link: "https://httparch.github.io/SpiritProwl/SpiritProwl/app.html",
     Github: "https://github.com/httparch/SpiritProwl",
   },
-    {
+  {
     id: 9,
-    title: "SandaTap",
-    role: "Game developer",
-    description: "SandaTap is a fun and easy idle tapping game that lets you explore Philippine history with just your fingertips! Tap through important moments in Filipino culture — from ancient times to famous revolutions. Defeat enemies, collect gold, unlock heroes, and upgrade your gear as you relive the country’s greatest stories.",
-    image: "./src/assets/Project/SandaTap.png",
-    link: "https://www.sandatap.com/",
-    Github: "",
-  },
+    title: "Calendar",
+    role: "Frontend developer",
+    description: "The Calendar Project is a dynamic calendar application I created as an academic requirement for my Web Development subject.The calendar updates dynamically, displaying the current date and time. It also includes a feature that detects whether it's day or night and adjusts accordingly. A built-in dark mode enhances usability, making it easier on the eyes. Additionally, the project features a \"Quote of the Day\" section, providing daily inspiration to users. ",
+    image: "./src/assets/Project/calendar.png",
+    link: "https://httparch.github.io/2024-calendar/calendar.html",
+    Github: "https://github.com/httparch/2024-calendar",
+  }
 ];
 
 export const tools = [

@@ -6,10 +6,10 @@ function SpotifyCard() {
     const fetchRecentTrack = async () => {
       try {
         const token = await _SpotifyGetAccessToken();
-        console.log("Access token: " + token);
+        // console.log("Access token: " + token);
 
         const data = await _GetRecentTrack(token);
-        console.log("DATA : " + data);
+        //console.log("DATA : " + data);
       } catch (error) {
         console.error("Error fetching Spotify data:", error);
       }

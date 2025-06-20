@@ -58,3 +58,6 @@ export const _GetRecentTrack = async (token) => {
         console.error("TC_CONTROLLER: ", error)
     }
 }
+
+//https://accounts.spotify.com/authorize?client_id=ba722d4cbbd247f5ae134e12c458e8eb&response_type=code&redirect_uri=https%3A%2F%2Fgithub.com%2Fhttparch%0A&scope=user-read-recently-played
+
