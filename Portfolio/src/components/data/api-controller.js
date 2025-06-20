@@ -24,7 +24,7 @@ export const _SpotifyGetAccessToken = async () => {
         
         if(!response.ok){
             const errorText = await response.text();
-            console.error("CONTROLLER:", errorText);
+            //console.error("CONTROLLER:", errorText);
             return; 
         }
         
@@ -47,7 +47,7 @@ export const _GetRecentTrack = async (token) => {
         
         if(!response.ok){
             const errorText = await response.text();
-            console.error("CONTROLLER:", errorText);
+            //console.error("CONTROLLER:", errorText);
             return; 
         }
         
