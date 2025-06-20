@@ -22,7 +22,7 @@ function Profile() {
 
       <div className="bg-white rounded-lg p-0 overflow-hidden h-24 relative">
         <img
-          src="../src/assets/working.gif"
+          src="..\public\working.gif"
           alt="Pixel Animation"
           className="w-full h-full object-cover -mt"
         />
