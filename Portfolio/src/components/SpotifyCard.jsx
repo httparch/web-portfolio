@@ -22,7 +22,7 @@ function SpotifyCard() {
       {" "}
       <div className="bg-gray-300 rounded-lg p-4 flex items-center shadow-inner shadow-gray-500">
         <img
-          src="../src/assets/Profile/BL.png"
+          src="..\src\assets\Profile\BL.png"
           alt="Song Cover"
           className="w-12 h-12 rounded-md object-cover"
         />
