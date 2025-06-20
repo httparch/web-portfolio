@@ -27,6 +27,9 @@ function Profile() {
           className="w-full h-full object-cover -mt"
         />
       </div>
+      <div className="text-center text-gray-500 text-sm mt-4">
+        © 2025 Archer Shanebigornia. All rights reserved.
+      </div>
     </>
   );
 }

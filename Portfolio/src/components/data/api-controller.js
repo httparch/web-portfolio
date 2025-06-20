@@ -23,7 +23,9 @@ export const _SpotifyGetAccessToken = async () => {
         })
         
         if(!response.ok){
-            console.error("CONTROLLER:", await response.text());
+            const errorText = await response.text();
+            console.error("CONTROLLER:", errorText);
+            return; 
         }
         
         const data = await response.json();
@@ -39,16 +41,19 @@ export const _GetRecentTrack = async (token) => {
 
     try {
         const response = await fetch("https://api.spotify.com/v1/me/player/recently-played",{
-            headers: {'Authorization' :  'Bearer ' + token}
+            headers: {'Authorization':'Bearer ' + token}
         })
         
+        
         if(!response.ok){
-            console.error("CONTROLLER:", await response.text());
+            const errorText = await response.text();
+            console.error("CONTROLLER:", errorText);
+            return; 
         }
         
         
         const data = await response.json();
-        return data.items;
+        return data;
     } catch (error) {
         console.error("TC_CONTROLLER: ", error)
     }

@@ -90,11 +90,6 @@ function ProfileCard() {
             </a>
           </div>
         </div>
-        <img
-          src="../src/assets/cat2.gif"
-          alt="Cat Animation"
-          className="absolute top-2/5 left-100 transform -translate-x-1/2 w-25 h-25"
-        />
       </div>
     </>
   );

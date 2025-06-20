@@ -15,6 +15,7 @@ export const certificates = [
     image: "./src/assets/Certs/web.png",
     link: "https://coursera.org/share/7573203828750c173d93ad48564ca5bf",
   },
+  
 ];
 
 export const projects = [
@@ -92,6 +93,15 @@ export const projects = [
     link: "https://httparch.github.io/SpiritProwl/SpiritProwl/app.html",
     Github: "https://github.com/httparch/SpiritProwl",
   },
+    {
+    id: 9,
+    title: "SandaTap",
+    role: "Game developer",
+    description: "SandaTap is a fun and easy idle tapping game that lets you explore Philippine history with just your fingertips! Tap through important moments in Filipino culture — from ancient times to famous revolutions. Defeat enemies, collect gold, unlock heroes, and upgrade your gear as you relive the country’s greatest stories.",
+    image: "./src/assets/Project/SandaTap.png",
+    link: "https://www.sandatap.com/",
+    Github: "",
+  },
 ];
 
 export const tools = [
@@ -122,3 +132,7 @@ export const artworkData = [
 ];
 
 export const _key = "93d51262-ad0e-48c1-a601-57370eb56bbc";
+export const clientId = "ba722d4cbbd247f5ae134e12c458e8eb";
+export const clientSecret = "d817e47cf88c49adb86bfd1333fdf0a9";
+
+export const scope = 'user-read-recently-played';

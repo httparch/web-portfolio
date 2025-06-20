@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InfoCard from "./InfoCard";
 import { _key } from "./data/data.js";
+import { _PostMessage } from "./data/api-controller.js";
 
 function OtherInfo() {
   const [formData, setFormData] = useState({
@@ -21,14 +22,9 @@ function OtherInfo() {
     setResult("Sending...");
 
     const dataForm = new FormData(e.target);
-
     dataForm.append("access_key", _key);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: dataForm,
-    });
-
+    const response = await _PostMessage(dataForm);
     const data = await response.json();
 
     if (data.success) {
@@ -37,6 +33,7 @@ function OtherInfo() {
       alert(
         `Message Sent!\nName: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`
       );
+      setResult("");
       e.target.reset();
     } else {
       console.log("Error", data);
@@ -49,7 +46,7 @@ function OtherInfo() {
       <InfoCard />
       <div className="bg-white rounded-lg p-3">
         <h3 className="text-sm font-bold text-center">
-          {result === "" ? "Message me!" : "Sending..."}
+          {result !== "" ? "Sending..." : "Message me!"}
         </h3>
         <form onSubmit={handleSubmit} className="mt-4">
           <input
