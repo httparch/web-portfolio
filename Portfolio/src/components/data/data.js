@@ -54,8 +54,8 @@ export const projects = [
     role: "Fullstack developer",
     description: "Python Warrior is an interactive coding game that helps players learn Python programming in a fun and engaging way. Players control a warrior character by writing Python code to navigate levels, defeat enemies, and solve challenges. Each level introduces new programming concepts, such as loops, conditionals, and functions, allowing players to improve their coding skills as they progress. Python Warrior makes learning to code an adventure, combining problem-solving with an exciting gameplay experience.",
     image: "/Project/python.png",
-    link: "https://httparch.github.io/GhostErrorPage/threeJs-practice/index.html",
-    Github: "https://github.com/httparch/Python-Warrior",
+    link: "https://httparch.github.io/Independent_Python_Warrior/",
+    Github: "https://github.com/httparch/Independent_Python_Warrior",
   },
   {
     id: 5,
