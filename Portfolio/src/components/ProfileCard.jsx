@@ -6,9 +6,10 @@ import {
   FaHouseUser,
   FaEye,
 } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function ProfileCard() {
+  const hasCounted = useRef(false);
   const [age, setAge] = useState(null);
   const [pageViews, setPageViews] = useState(0);
   const [visits, setVisits] = useState(0);
@@ -29,8 +30,7 @@ function ProfileCard() {
   }, []);
 
   useEffect(() => {
-    const alreadyCounted = sessionStorage.getItem("hasCountedView");
-    if (alreadyCounted === "true") return;
+    if (hasCounted.current) return;
     const type =
       sessionStorage.getItem("visit") === null //if first time buksan yung app, sessionstorage will be null, then ipapasang type is
         ? "type=visit-pageview" //visit-page
@@ -39,7 +39,7 @@ function ProfileCard() {
     updateCounter(type);
 
     sessionStorage.setItem("visit", "true");
-    sessionStorage.setItem("hasCountedView", "true");
+    hasCounted.current = true;
   }, []);
 
   const updateCounter = async (type) => {
