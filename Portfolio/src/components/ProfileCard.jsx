@@ -3,13 +3,16 @@ import {
   FaInstagram,
   FaLinkedin,
   FaGithub,
-  FaCode,
+  FaHouseUser,
   FaEye,
 } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function ProfileCard() {
+  const hasCounted = useRef(false);
   const [age, setAge] = useState(null);
+  const [pageViews, setPageViews] = useState(0);
+  const [visits, setVisits] = useState(0);
 
   useEffect(() => {
     const birthDate = new Date("2002-03-25");
@@ -25,6 +28,39 @@ function ProfileCard() {
     }
     setAge(calculatedAge);
   }, []);
+
+  useEffect(() => {
+    if (hasCounted.current) return;
+    const type =
+      sessionStorage.getItem("visit") === null
+        ? "type=visit-pageview"
+        : "type=pageview";
+
+    updateCounter(type);
+
+    sessionStorage.setItem("visit", "true");
+    hasCounted.current = true;
+  }, []);
+
+  const updateCounter = async (type) => {
+    try {
+      const res = await fetch(
+        `https://spotify-server-nn33.onrender.com/api/page-views?${type}`
+      );
+      const data = await res.json();
+      setPageViews(data.pageViews || 0);
+      setVisits(data.visits || 0);
+    } catch (err) {
+      console.error("Error updating counter:", err);
+    }
+  };
+
+  const formatNumber = (num) => {
+    if (num >= 1000000)
+      return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+    if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, "") + "k";
+    return num;
+  };
 
   return (
     <>
@@ -90,6 +126,17 @@ function ProfileCard() {
             >
               <FaGithub className="text-gray-800 text-xl hover:scale-150 transition" />
             </a>
+          </div>
+          <div className="space-x-5"></div>
+          <div className="flex items-center space-x-1">
+            <FaEye className="text-gray-800 text-xl" />
+            <span className="text-gray-700 text-sm font-medium ">
+              {formatNumber(pageViews)}
+            </span>
+            <FaHouseUser className="text-gray-700 text-xl" />
+            <span className="text-gray-700 text-sm font-medium">
+              {formatNumber(visits)}
+            </span>
           </div>
         </div>
       </div>
