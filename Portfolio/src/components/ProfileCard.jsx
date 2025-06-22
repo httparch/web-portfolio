@@ -128,7 +128,7 @@ function ProfileCard() {
             </a>
           </div>
           <div className="space-x-5"></div>
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-3">
             <FaEye className="text-gray-800 text-xl" />
             <span className="text-gray-700 text-sm font-medium ">
               {formatNumber(pageViews)}
