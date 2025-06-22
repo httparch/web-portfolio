@@ -32,8 +32,8 @@ function ProfileCard() {
   useEffect(() => {
     if (hasCounted.current) return;
     const type =
-      sessionStorage.getItem("visit") === null
-        ? "type=visit-pageview"
+      sessionStorage.getItem("visit") === null //if first time buksan yung app, sessionstorage will be null, then ipapasang type is
+        ? "type=visit-pageview" //visit-page
         : "type=pageview";
 
     updateCounter(type);
@@ -45,8 +45,8 @@ function ProfileCard() {
   const updateCounter = async (type) => {
     try {
       const res = await fetch(
-        `https://spotify-server-nn33.onrender.com/api/page-views?${type}`
-      );
+        `https://spotify-server-nn33.onrender.com/api/page-views?${type}` //dito magcacall, then on the server side , ireread yung
+      ); //ginawa kong json file, then send object value as res
       const data = await res.json();
       setPageViews(data.pageViews || 0);
       setVisits(data.visits || 0);
@@ -128,7 +128,7 @@ function ProfileCard() {
             </a>
           </div>
           <div className="space-x-5"></div>
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2">
             <FaEye className="text-gray-800 text-xl" />
             <span className="text-gray-700 text-sm font-medium ">
               {formatNumber(pageViews)}
