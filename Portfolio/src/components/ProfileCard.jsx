@@ -91,7 +91,7 @@ function ProfileCard() {
 
         <div className="mt-5 flex items-center space-x-4">
           <a
-            href="\Profile\CV_Bigornia_Archer_Shane.pdf"
+            href="\Profile\Bigornia_Archer_Shane.pdf"
             download
             className="bg-gray-700 text-white py-1 px-4 rounded-lg shadow-md hover:bg-gray-800 transition"
           >
