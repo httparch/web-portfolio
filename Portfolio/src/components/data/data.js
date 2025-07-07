@@ -113,7 +113,7 @@ export const tools = [
   { name: "Tailwind", imgSrc: "/Tools/bxl-tailwind-css.svg" },
   { name: "Git", imgSrc: "/Tools/bxl-git.svg" },
   { name: "JavaScript", imgSrc: "/Tools/bxl-javascript.svg" },
-  { name: "Spring Boot", imgSrc: "/Tools/bxl-spring-boot.svg" },
+  { name: "MySQL", imgSrc: "/Tools/icons8-mysql-500.svg" },  
 ];
 
 //Portfolio\public\Drawings\Painting.jpg
