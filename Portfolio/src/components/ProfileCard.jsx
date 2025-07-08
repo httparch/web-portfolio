@@ -64,40 +64,40 @@ function ProfileCard() {
 
   return (
     <>
-      <div className="bg-gray-300 rounded-lg p-6 flex-[2] min-w-[300px] shadow-inner shadow-gray-500">
-        <div className="flex items-center space-x-6">
+      <div className="bg-gray-300 rounded-lg p-4 sm:p-6 shadow-inner shadow-gray-500 w-full">
+        {/* Profile Info */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-4 sm:space-y-0">
           <img
             src="\Profile\archer.png"
             alt="Profile"
-            className="w-40 h-40 object-cover square-full border-2 border-gray-300"
+            className="w-32 h-32 sm:w-40 sm:h-40 object-cover border-2 border-gray-300 self-center sm:self-start"
           />
-
-          <div>
-            <h2 className="text-xl font-bold truncate">
+          <div className="text-center sm:text-left">
+            <h2 className="text-lg sm:text-xl font-bold">
               Archer Shane Bigornia
             </h2>
-            <p className="text-gray-600 trucante">
-              Aspiring Software Developer
-            </p>
-            <p className="text-gray-600 truncate">
+            <p className="text-gray-600">Aspiring Software Developer</p>
+            <p className="text-gray-600">
               {age !== null ? `${age} years old` : "..."}
             </p>
-            <p className="text-gray-600 truncate">+639162772331</p>
-            <p className="text-gray-600 truncate">
+            <p className="text-gray-600 break-all">+639162772331</p>
+            <p className="text-gray-600 break-all">
               bigorniaarcher679@gmail.com
             </p>
           </div>
         </div>
 
-        <div className="mt-5 flex items-center space-x-4">
+        {/* Buttons and Socials */}
+        <div className="mt-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <a
             href="\Profile\Bigornia_Archer_Shane.pdf"
             download
-            className="bg-gray-700 text-white py-1 px-4 rounded-lg shadow-md hover:bg-gray-800 transition"
+            className="bg-gray-700 text-white py-2 px-4 rounded-lg shadow-md text-center hover:bg-gray-800 transition"
           >
             Download CV
           </a>
-          <div className="flex space-x-3">
+
+          <div className="flex justify-center sm:justify-start gap-4">
             <a
               href="https://www.facebook.com/Potchiatgrey"
               target="_blank"
@@ -127,16 +127,20 @@ function ProfileCard() {
               <FaGithub className="text-gray-800 text-xl hover:scale-150 transition" />
             </a>
           </div>
-          <div className="space-x-5"></div>
-          <div className="flex items-center space-x-2">
-            <FaEye className="text-gray-800 text-xl" />
-            <span className="text-gray-700 text-sm font-medium ">
-              {formatNumber(pageViews)}
-            </span>
-            <FaHouseUser className="text-gray-700 text-xl" />
-            <span className="text-gray-700 text-sm font-medium">
-              {formatNumber(visits)}
-            </span>
+
+          <div className="flex justify-center sm:justify-end items-center gap-3">
+            <div className="flex items-center gap-1">
+              <FaEye className="text-gray-800 text-xl" />
+              <span className="text-gray-700 text-sm font-medium">
+                {formatNumber(pageViews)}
+              </span>
+            </div>
+            <div className="flex items-center gap-1">
+              <FaHouseUser className="text-gray-700 text-xl" />
+              <span className="text-gray-700 text-sm font-medium">
+                {formatNumber(visits)}
+              </span>
+            </div>
           </div>
         </div>
       </div>

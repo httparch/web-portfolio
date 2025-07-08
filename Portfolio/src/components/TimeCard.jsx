@@ -12,8 +12,8 @@ function TimeCard() {
   }, []);
 
   return (
-    <div className="bg-gray-300 text-gray-600 font-semibold py-1 px-4 rounded-lg shadow-inner shadow-gray-500 w-full flex items-center space-x-30">
-      <span>
+    <div className="bg-gray-300 text-gray-600 font-semibold py-2 px-4 rounded-lg shadow-inner shadow-gray-500 w-full flex flex-col sm:flex-row items-center sm:justify-between gap-2">
+      <span className="text-center sm:text-left">
         {currentTime.toLocaleDateString(undefined, {
           weekday: "long",
           year: "numeric",
@@ -21,7 +21,7 @@ function TimeCard() {
           day: "numeric",
         })}
       </span>
-      <span className="text-green-700 font-semibold">
+      <span className="text-green-700 font-semibold text-center sm:text-right">
         {currentTime.toLocaleTimeString()}
       </span>
     </div>
