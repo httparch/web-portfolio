@@ -6,6 +6,12 @@ function Projects({ projects }) {
   const [expandedProject, setExpandedProject] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
+  const statusColors = {
+    Done: "bg-green-500",
+    "In Progress": "bg-yellow-500",
+    "To Improve": "bg-red-500",
+  };
+
   return (
     <>
       {projects.map((project) => {
@@ -32,7 +38,29 @@ function Projects({ projects }) {
 
             <div className="w-3/3 flex flex-col">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-bold">{project.title}</h3>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-lg font-bold truncate">
+                    {project.title}
+                  </h3>
+                  <span
+                    className={`text-white text-xs font-semibold px-2 py-1 rounded truncate ${
+                      statusColors[project.status] || "bg-gray-400"
+                    }`}
+                  >
+                    {project.status}
+                  </span>
+                  {/* Tool Icons */}
+                  <div className="flex items-center gap-1">
+                    {project.Tools?.map((tool, index) => (
+                      <img
+                        key={index}
+                        src={tool}
+                        alt={`Tool ${index}`}
+                        className="w-7 h-7"
+                      />
+                    ))}
+                  </div>
+                </div>
                 <div className="flex gap-3">
                   <a
                     href={project.Github}
