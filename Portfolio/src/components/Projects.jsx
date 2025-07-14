@@ -26,64 +26,68 @@ function Projects({ projects }) {
             className="bg-white rounded-lg p-4 flex gap-4 overflow-hidden shadow-xl"
           >
             <div
-              className="w-1/3 cursor-pointer"
+              className="w-1/3 relative cursor-pointer group"
               onClick={() => setSelectedImage(project.image)}
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-32 object-cover rounded-lg hover:opacity-80 transition"
+                className="w-full h-32 object-cover rounded-lg transition group-hover:opacity-80"
               />
+
+              <div className="absolute bottom-0 left-0 w-full px-2 py-1 flex justify-end items-center backdrop-blur-sm bg-white/30 rounded-b-lg gap-2">
+                <a
+                  href={project.Github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="text-blue-500"
+                >
+                  <FaGithub
+                    size={18}
+                    className="text-gray-700 hover:scale-125 transition"
+                  />
+                </a>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="text-blue-500"
+                >
+                  <FaLink
+                    size={18}
+                    className="text-gray-700 hover:scale-125 transition"
+                  />
+                </a>
+              </div>
             </div>
 
             <div className="w-3/3 flex flex-col">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <h3 className="text-lg font-bold truncate">
                     {project.title}
                   </h3>
+
                   <span
-                    className={`text-white text-xs font-semibold px-2 py-1 rounded truncate ${
+                    className={`text-white text-xs font-semibold px-2 py-1 rounded ${
                       statusColors[project.status] || "bg-gray-400"
                     }`}
                   >
                     {project.status}
                   </span>
-                  {/* Tool Icons */}
-                  <div className="flex items-center gap-1">
+
+                  <div className="flex items-center gap-1 flex-wrap">
                     {project.Tools?.map((tool, index) => (
                       <img
                         key={index}
                         src={tool}
                         alt={`Tool ${index}`}
-                        className="w-7 h-7"
+                        className="w-6 h-6 "
                       />
                     ))}
                   </div>
-                </div>
-                <div className="flex gap-3">
-                  <a
-                    href={project.Github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500"
-                  >
-                    <FaGithub
-                      size={20}
-                      className="text-gray-600 text-xl hover:scale-150 transition"
-                    />
-                  </a>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500"
-                  >
-                    <FaLink
-                      size={20}
-                      className="text-gray-600 text-xl hover:scale-150 transition"
-                    />
-                  </a>
                 </div>
               </div>
 
