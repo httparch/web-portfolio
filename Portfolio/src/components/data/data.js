@@ -63,6 +63,21 @@ export const projects = [
   },
   {
     id: 3,
+    title: "Stock Notifier",
+    role: "Chrome Extension",
+    status: "Done",
+    description: "A lightweight and helpful Chrome extension for Grow a Garden players. Stay updated on in-game shop stocks, real-time weather, and searchable wiki information — all in one place, without opening the game!",
+    image: "/Project/GaG.png",
+    link: "https://github.com/httparch/Grow-A-Garden-Stock-Ping",
+    Github: "https://github.com/httparch/Grow-A-Garden-Stock-Ping",
+    Tools:[
+      "/Tool/Javascript.png",
+       "/Tool/html.png",
+        "/Tool/css.png",
+    ]
+  },
+  {
+    id: 4,
     title: "PyType",
     role: "Frontend Application",
     status: "Done",
@@ -77,7 +92,7 @@ export const projects = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     title: "Python Warrior",
     role: "Frontend Application",
     status: "Done",
@@ -94,7 +109,7 @@ export const projects = [
     ]
   },
   {
-    id: 5,
+    id: 6,
     title: "Cherry Game",
     role: "Frontend Game Application",
     status: "Done",
@@ -111,7 +126,7 @@ export const projects = [
   },
 
   {
-    id: 6,
+    id: 7,
     title: "SandaTap",
     role: "Mobile Game Application",
     status: "Done",
@@ -125,7 +140,7 @@ export const projects = [
     ]
   },
   {
-    id: 7,
+    id: 8,
     title: "TCOYB",
     role: "Mobile Game Application",
     status: "In Progress",
@@ -139,7 +154,7 @@ export const projects = [
     ]
   },
   {
-    id: 8,
+    id: 9,
     title: "Inventory System",
     role: "Fullstack Application",
     status: "Done",
@@ -153,7 +168,7 @@ export const projects = [
     ]
   },
   {
-    id: 9,
+    id: 10,
     title: "Spirit Prowl",
     role: "Frontend Application",
     status: "To Improve",
@@ -168,7 +183,7 @@ export const projects = [
     ]
   },
   {
-    id: 10,
+    id: 11,
     title: "Calendar",
     role: "Frontend Application",
     status: "Done",
