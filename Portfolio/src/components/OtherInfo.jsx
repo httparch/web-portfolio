@@ -30,9 +30,6 @@ function OtherInfo() {
     if (data.success) {
       setResult("Form Submitted Successfully!");
       setFormData({ name: "", email: "", message: "" });
-      alert(
-        `Message Sent!\nName: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`
-      );
       setResult("");
       e.target.reset();
     } else {
