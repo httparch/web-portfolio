@@ -28,7 +28,7 @@ export const projects = [
       "An interactive virtual classroom for learning Python, featuring real-time multiplayer, coding mini-games, 8-bit-style UI, and video chat and audio call. Built with React, Node.js, Express, MongoDB, and Colyseus.",
     image: "/Project/Codehub.png",
     link: "https://httparch.github.io/GhostErrorPage/threeJs-practice/index.html",
-    Github: "https://github.com/httparch/CodeHub",
+    Github: null,
     Tools:[
       "/Tool/typescript.png",
       "/Tool/react.png",
@@ -49,7 +49,7 @@ export const projects = [
     description:
       "A donor-seeker platform that connects people in need of blood with nearby donors. Users can register, search by blood type and location, and contact matches directly. Built with JavaScript, Express, MySQL, Handlebars, and Bootstrap.",
     image: "/Project/blood.png",
-    link: "https://httparch.github.io/GhostErrorPage/threeJs-practice/index.html",
+    link: null,
     Github: "https://github.com/httparch/BloodFinder",
     Tools:[
       "/Tool/Javascript.png",
@@ -68,7 +68,7 @@ export const projects = [
     status: "Done",
     description: "A Chrome extension for Grow a Garden players that tracks shop stocks, real-time weather, and wiki data—accessible anytime without opening the game.",
     image: "/Project/GaG.png",
-    link: "https://github.com/httparch/Grow-A-Garden-Stock-Ping",
+    link: null,
     Github: "https://github.com/httparch/Grow-A-Garden-Stock-Ping",
     Tools:[
       "/Tool/Javascript.png",
@@ -115,7 +115,7 @@ export const projects = [
     status: "Done",
     description: "A mini catching game built with Phaser, where players control Colet (from BINI) to catch cherries and avoid skulls. Created as practice for developing CodeHub’s game engine.",
     image: "/Project/cherry.png",
-    link: "https://httparch.github.io/GhostErrorPage/threeJs-practice/index.html",
+    link: null,
     Github: "https://github.com/httparch/CherryGame",
     Tools:[
       "/Tool/Javascript.png",
@@ -133,7 +133,7 @@ export const projects = [
     description: "An idle tapping mobile game that lets players explore Philippine history by tapping through key cultural moments, defeating enemies, collecting gold, and unlocking heroes.",
     image: "/Project/SandaTap.png",
     link: "https://www.sandatap.com/",
-    Github: "",
+    Github: null,
     Tools:[
       "/Tool/unity.png",
        "/Tool/csharp.png",
@@ -146,8 +146,8 @@ export const projects = [
     status: "In Progress",
     description: "A pet simulator mobile game where players care for their favorite SB19 member, customizing their home and outfit while earning coins through daily activities.",
     image: "/Project/TakeCareOfYourBias.png",
-    link: "",
-    Github: "",
+    link: null,
+    Github: "https://github.com/httparch/TCOYB",
     Tools:[
       "/Tool/unity.png",
        "/Tool/csharp.png",
@@ -160,7 +160,7 @@ export const projects = [
     status: "Done",
     description: "A Java-based inventory management app that lets users add, update, search, and delete items. Connected to MySQL for secure data storage. ",
     image: "/Project/inventory.png",
-    link: "https://httparch.github.io/GhostErrorPage/threeJs-practice/index.html",
+    link: null,
     Github: "https://github.com/httparch/Simple-Inventory-with-Database",
     Tools:[
       "/Tool/java.png",

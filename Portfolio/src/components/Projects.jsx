@@ -36,30 +36,55 @@ function Projects({ projects }) {
               />
 
               <div className="absolute bottom-0 left-0 w-full px-2 py-1 flex justify-end items-center backdrop-blur-sm bg-white/30 rounded-b-lg gap-2">
-                <a
-                  href={project.Github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="text-blue-500"
-                >
-                  <FaGithub
-                    size={18}
-                    className="text-gray-700 hover:scale-125 transition"
-                  />
-                </a>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="text-blue-500"
-                >
-                  <FaLink
-                    size={18}
-                    className="text-gray-700 hover:scale-125 transition"
-                  />
-                </a>
+                {project.Github ? (
+                  <a
+                    href={project.Github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-blue-500"
+                  >
+                    <FaGithub
+                      size={18}
+                      className="text-gray-700 hover:scale-125 transition"
+                    />
+                  </a>
+                ) : (
+                  <div
+                    className="relative group cursor-not-allowed"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <FaGithub size={18} className="text-gray-400" />
+                    <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 whitespace-nowrap bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+                      Private repository (unavailable)
+                    </span>
+                  </div>
+                )}
+
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-blue-500"
+                  >
+                    <FaLink
+                      size={18}
+                      className="text-gray-700 hover:scale-125 transition"
+                    />
+                  </a>
+                ) : (
+                  <div
+                    className="relative group cursor-not-allowed"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <FaLink size={18} className="text-gray-400" />
+                    <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 whitespace-nowrap bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+                      Live site not available.
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
 
