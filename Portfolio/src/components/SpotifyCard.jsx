@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 
 function SpotifyCard() {
   const [track, setTrack] = useState(() => {
-    // Load cached track from localStorage (if any)
     const cached = localStorage.getItem("recentTrack");
     return cached ? JSON.parse(cached) : null;
   });
@@ -26,7 +25,6 @@ function SpotifyCard() {
             playedAt: recent.played_at,
           };
 
-          // ✅ Only update if it's different from the cached one
           const cached = JSON.parse(localStorage.getItem("recentTrack"));
           if (!cached || cached.name !== newTrack.name) {
             setTrack(newTrack);
@@ -40,7 +38,6 @@ function SpotifyCard() {
 
     fetchRecentTrack();
 
-    // Optional: Poll every 30 seconds for updates
     const interval = setInterval(fetchRecentTrack, 30000);
     return () => clearInterval(interval);
   }, []);
