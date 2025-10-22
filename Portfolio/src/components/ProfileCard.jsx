@@ -13,6 +13,7 @@ function ProfileCard() {
   const [age, setAge] = useState(null);
   const [pageViews, setPageViews] = useState(0);
   const [visits, setVisits] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const birthDate = new Date("2002-03-25");
@@ -68,9 +69,15 @@ function ProfileCard() {
         {/* Profile Info */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-4 sm:space-y-0">
           <img
-            src="\Profile\archer.png"
+            src={
+              isHovered
+                ? "\\Profile\\archer-hover.jpg"
+                : "\\Profile\\archer.jpg"
+            }
             alt="Profile"
-            className="w-32 h-32 sm:w-40 sm:h-40 object-cover border-2 border-gray-300 self-center sm:self-start"
+            className="w-32 h-32 sm:w-40 sm:h-40 object-cover border-2 border-gray-300 self-center sm:self-start transition duration-300 ease-in-out"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           />
           <div className="text-center sm:text-left">
             <h2 className="text-lg sm:text-xl font-bold">
