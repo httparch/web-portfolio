@@ -83,7 +83,7 @@ function ProfileCard() {
             <h2 className="text-lg sm:text-xl font-bold">
               Archer Shane Bigornia
             </h2>
-            <p className="text-gray-600">Aspiring Software Developer</p>
+            <p className="text-gray-600">Aspiring Salesforce Developer</p>
             <p className="text-gray-600">
               {age !== null ? `${age} years old` : "..."}
             </p>
